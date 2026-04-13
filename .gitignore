@@ -1,0 +1,11 @@
+.obsidian/
+graph-based-deep-learning-literature/
+scripts/__pycache__/
+.trash/
+.history/
+.DS_Store
+Thumbs.db
+desktop.ini
+.venv/
+*.pyc
+conflict-files-obsidian-git.md
