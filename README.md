@@ -1,6 +1,6 @@
 # Obsidian 研究用ボールト（公開スターター）
 
-GNN 関連の論文リスト [naganandy/graph-based-deep-learning-literature](https://github.com/naganandy/graph-based-deep-learning-literature) をローカルに置き、Obsidian 上で読書ノートを増やすための最小構成です。テンプレートと Python スクリプトだけを共有し、**`.obsidian`（プラグイン設定）は含めていません**。Community プラグインのインストールと設定は各自の環境で行ってください。
+GNN 関連の論文リスト [naganandy/graph-based-deep-learning-literature](https://github.com/naganandy/graph-based-deep-learning-literature) をローカルに置き、Obsidian 上で読書ノートを増やすための最小構成です。**Community プラグイン「Templater」を `.obsidian` にバンドル済みで、テンプレートフォルダは `Templates/` に設定しています。**初回は Obsidian の信頼確認やコミュニティプラグインの有効化を求められることがあります。その他のプラグインは各自で追加してください。`workspace.json` など端末依存のファイルは `.gitignore` で除外しています。
 
 ## 前提
 
@@ -20,12 +20,13 @@ git clone https://github.com/naganandy/graph-based-deep-learning-literature.git
 
 フォルダ名は `graph-based-deep-learning-literature` のままにしてください（スクリプトがこの名前を参照します）。`.gitignore` で無視されるため、clone した文献はこの公開リポジトリにはコミットされません。
 
-3. （任意）Templater を使う場合: Obsidian の **設定 → Community plugins** で **Templater** を有効化する。リポジトリにプラグインの設定 JSON は含めていません。
+3. **設定 → コミュニティプラグイン** でセーフモードをオフにし、**Templater** が有効か確認する（無効ならオン）。バンドルしているバージョンは `.obsidian/plugins/templater-obsidian/manifest.json` の `version` を参照。
 
 ## ディレクトリの役割
 
 | パス | 説明 |
 |------|------|
+| `.obsidian/` | Templater のみリポジトリに含む（`main.js` / `manifest.json` / `data.json` など）。作業レイアウト用の `workspace.json` は含めない |
 | `Templates/Paper_Template.md` | 論文ノート生成時にスクリプトが読むテンプレート |
 | `Templates/Monthly_Note_Template.md` | 月報用（Templater 構文あり） |
 | `Templates/Monthly_Report_Package_Template.md` | 月次進捗報告資料フォルダ用インデックス（Templater 構文あり） |
@@ -52,11 +53,10 @@ BibTeX だけ既存ノートに補完したい場合（任意）:
 python3 scripts/refetch_bibtex.py
 ```
 
-## 月報の作り方（Templater 利用時）
+## 月報の作り方（Templater）
 
-1. Templater を有効化する。
-2. コマンドパレットから Templater の「テンプレートを挿入」など、普段使っている手順で `Templates/Monthly_Note_Template.md` を適用する。
-3. 生成した内容を `Daily_Notes/YYYY/YYYY-MM_MonthlyReview.md` として保存する（年フォルダがなければ作成する）。
+1. コマンドパレットから Templater の「テンプレートの挿入」等で `Templates/Monthly_Note_Template.md` を適用する。
+2. 生成した内容を `Daily_Notes/YYYY/YYYY-MM_MonthlyReview.md` として保存する（年フォルダがなければ作成する）。
 
 `Monthly_Report_Package_Template.md` は `Research_Projects/進捗報告資料/YYYY/YYYY-MM/README.md` として使う想定です。該当する月のフォルダを自分で作ってからテンプレートを当ててください。
 
@@ -67,7 +67,8 @@ python3 scripts/refetch_bibtex.py
 ## クレジット
 
 - 論文メタデータの出典: [naganandy/graph-based-deep-learning-literature](https://github.com/naganandy/graph-based-deep-learning-literature)
-- 本リポジトリ内のテンプレート・スクリプトのライセンスは [LICENSE](LICENSE) に記載しています（文献リポジトリ本体とは別物です）。
+- Templater プラグイン: [SilentVoid13/Templater](https://github.com/SilentVoid13/Templater)（同棲ファイルの著作権はプラグイン作者側のライセンスに従います）
+- 本リポジトリ内のテンプレート・スクリプト（Templater 除く）のライセンスは [LICENSE](LICENSE) に記載（文献リポジトリ本体とは別物）。
 
 ## ライセンス
 
