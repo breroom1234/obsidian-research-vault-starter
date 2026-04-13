@@ -14,17 +14,13 @@ progress_review_interval_days: 7
 
 - [ ]
 
-## 今月アクティブにする project
+## 今月やること
 
 - [ ]
 
 ## 今月の成果物
 
 - [ ]
-
-## 今月の進捗報告資料
-
-- [[Research_Projects/進捗報告資料/YYYY/YYYY-MM/README|YYYY-MM 進捗資料]]
 
 ## いまは着手しないこと
 

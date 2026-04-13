@@ -33,12 +33,9 @@ git clone https://github.com/naganandy/graph-based-deep-learning-literature.git
 | `.obsidian/` | `Templater` の最小設定のみを含む。`workspace.json` など端末依存ファイルは含めない |
 | `Templates/Paper_Template.md` | 論文ノート生成時にスクリプトが読むテンプレート |
 | `Templates/Monthly_Note_Template.md` | 月報用テンプレート（Templater 構文あり） |
-| `Templates/Monthly_Report_Package_Template.md` | 月次進捗報告資料フォルダ用テンプレート（Templater 構文あり） |
 | `Templates/Monthly_Note_Template_plain.md` | Templater なしでも使える月報のたたき台 |
 | `Papers/` | スクリプトが生成する論文ノートの出力先 |
 | `Daily_Notes/YYYY/YYYY-MM_MonthlyReview.md` | 月報の置き場 |
-| `Research_Projects/進行中/` | 進行中プロジェクト用。月報テンプレがこの配下の `.md` を列挙する |
-| `Research_Projects/進捗報告資料/` | 月次発表用スライド・PDF などの置き場 |
 
 ## 論文ノートの生成
 
@@ -61,8 +58,6 @@ python3 scripts/refetch_bibtex.py
 
 1. コマンドパレットから Templater のテンプレート挿入を実行し、`Templates/Monthly_Note_Template.md` を適用する。
 2. 生成した内容を `Daily_Notes/YYYY/YYYY-MM_MonthlyReview.md` として保存する。
-
-`Templates/Monthly_Report_Package_Template.md` は `Research_Projects/進捗報告資料/YYYY/YYYY-MM/README.md` として使う想定です。該当月のフォルダを自分で作ってからテンプレートを当ててください。
 
 ## 起動時に月報を自動で開く設定について
 
