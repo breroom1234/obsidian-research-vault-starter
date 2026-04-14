@@ -1,6 +1,6 @@
 # Obsidian 研究用ボールト（公開スターター）
 
-GNN 関連の論文リスト [naganandy/graph-based-deep-learning-literature](https://github.com/naganandy/graph-based-deep-learning-literature) をローカルに置き、Obsidian 上で読書ノートを増やすための最小構成です。Community プラグイン `Templater` は `.obsidian` に含めてあり、テンプレートフォルダは `Templates/` に設定済みです。初回は Obsidian 側で信頼確認やコミュニティプラグインの有効化を求められることがあります。`workspace.json` など端末依存のファイルは含めていません。
+GNN 関連の論文リスト [naganandy/graph-based-deep-learning-literature](https://github.com/naganandy/graph-based-deep-learning-literature) をローカルに置き、Obsidian 上で読書ノートを増やすための最小構成です。Community プラグイン `Templater` は `.obsidian` に含めてあり、テンプレートフォルダは `Templates/` に設定済みです。初回は Obsidian 側で信頼確認やコミュニティプラグインの有効化を求められることがあります。`workspace.json` など端末依存のファイルは含めていません。起動時には `Startup_Periodic_Notes_Creator.md` が走り、その月の月報を作成または追記して開きます。
 
 ## 前提
 
@@ -59,9 +59,15 @@ python3 scripts/refetch_bibtex.py
 1. コマンドパレットから Templater のテンプレート挿入を実行し、`Templates/Monthly_Note_Template.md` を適用する。
 2. 生成した内容を `Daily_Notes/YYYY/YYYY-MM_MonthlyReview.md` として保存する。
 
-## 起動時に月報を自動で開く設定について
+## 起動時の月報自動作成
 
-起動時に月報を自動作成・追記する Templater 用スクリプトは、このリポジトリには含めていません。必要なら説明会用資料や各自の QuickAdd 設定などで追加してください。
+`Templater` の `startup_templates` には `Templates/Startup_Periodic_Notes_Creator.md` を設定しています。Vault を開くと次を行います。
+
+- 可能なら `git pull`
+- 当月の `Daily_Notes/YYYY/YYYY-MM_MonthlyReview.md` を作成
+- 先月の `progress_review_last_date` を引き継ぎ
+- 当日分の `## YYYY-MM-DD` 見出しと TODO を追記
+- 月報を開く
 
 ## クレジット
 
